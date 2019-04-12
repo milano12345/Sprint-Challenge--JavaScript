@@ -6,33 +6,32 @@
   * The last parameter accepts a callback 
   * In the body of the function return the callback with the two parameters that you created
 */
-function consume(item1, item2, callback) {
-  return callback(item1, item2);
+function consume(item1, item2, cb) {
+  cb(item1,item2,)
 }
-
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-function add(x, y, callback) {
-  sum = (x+y)
-  return callback(sum);
+
+  function add(item1,item2,callback) {
+    const innerName = item1 + item2;
+ callback(innerName);
+  }
+
+function multiply(x, y, cb) {
+
 }
 
-function multiply(x, y, callback) {
-   sum = (x * y);
-   return callback(sum)
+function greeting(first, last, cb) {
 }
+console.log(2,2,add)
+console.log('mary','poppins',greeting)
 
-function greeting(first, last, callback) {
- return callback(`Hello ${first} ${last} nice to meet you`)
-}
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
- console.log(consume(2,9,add)); // 4
-
- consume(10,16,multiply); // 160
- consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+ // 160
+//  console.log("Mary","Poppins", greeting))// Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
@@ -41,17 +40,17 @@ function greeting(first, last, callback) {
 
 // Explanation: 
 
-//----Because it is within myFunction's scope.
+//--@@@@@@@@-Because it is within myFunction's scope.
 
-const external = "I'm outside the function";
+// const external = "I'm outside the function";
 
-function myFunction() {
-  console.log(external);
-  const internal = "Hello! I'm inside myFunction!";
+// function myFunction() {
+//   console.log(external);
+//   const internal = "Hello! I'm inside myFunction!";
 
-  function nestedFunction() {
-    console.log(internal);
-  };
-  nestedFunction();
-}
-myFunction();
+//   function nestedFunction() {
+//     console.log(internal);
+//   };
+//   nestedFunction();
+// }
+// myFunction();
