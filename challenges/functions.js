@@ -16,15 +16,17 @@ function consume(item1, item2, callback) {
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 function add(x, y, callback) {
-  return (x + y);
+  sum = (x+y)
+  return callback(sum);
 }
 
 function multiply(x, y, callback) {
-   return (x * y);
+   sum = (x * y);
+   return callback(sum)
 }
 
 function greeting(first, last, callback) {
- return (`Hello ${first} ${last}, nice to meet you!`)
+ return callback(`Hello ${first} ${last} nice to meet you`)
 }
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
  console.log(consume(2,9,add)); // 4
@@ -39,7 +41,7 @@ function greeting(first, last, callback) {
 
 // Explanation: 
 
-//Because it is within myFunction scope.
+//----Because it is within myFunction's scope.
 
 const external = "I'm outside the function";
 
