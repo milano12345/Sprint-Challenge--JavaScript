@@ -100,16 +100,18 @@ console.log(contactInfo)
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
+// const uni = [];
+let uni = []
 
-for (let i = 0; i < universities.length; i++) {
-  if (universities[i].includes("Uni")) {
+ for (let i = 0; i < universities.length; i++) {
+   if (universities[i].includes("Uni")) {
     uni.push(universities[i]); 
-  } else {
+   } else {
  
-  }
-}
-console.log(uni);
+   }
+ }
+ console.log(uni);
+
 
 
 // ==== ADVANCED Array Methods ====
@@ -135,8 +137,8 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 const animalNames = [];
 
-zooAnimals.forEach(function(i){
-  animalNames.push(i.scientific_name + " " + i.animal_name);
+zooAnimals.forEach((element) => {
+  animalNames.push( `Name: ${element.animal_name} + Scientific Name: ${element.scientific_name}`);
 });
 console.log(animalNames);
 // Request 2: .map()    
@@ -156,26 +158,21 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 
-let largerPopulation = zooAnimals.filter((object) => {
-  return object.population < "5";
+let lowerPopulation = zooAnimals.filter((element) => {
+  return element.population < "5";
 });
-console.log(largerPopulation);
+console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
-
 */
-let populationTotal = zooAnimals.reduce((popTotal, popAmount) => {
-  return popTotal + popAmount.population;
-},)
-console.log(populationTotal)
+let sum = zooAnimals.reduce((acc, val) => {
+  return val.population + acc
+}, 0);
 
 
+console.log(sum)
+//Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
-/* 
-
-Stretch: If you haven't already, convert your array method callbacks into arrow functions.
-
-*/
-
+//@@@@@@@@Stretch Completed(see above)//
